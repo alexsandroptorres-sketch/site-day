@@ -1,0 +1,469 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; /* Garante que padding e borda não aumentem o tamanho dos elementos */
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 50px;
+}
+
+:root {
+  --bg-color: #faf8f5;
+  --text-color: #2c2a29;
+  --muted-color: #6c6863;
+  --accent-color: #d4af37; /* Tom dourado suave */
+  --white: #ffffff;
+  --border-color: #e8e4df;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  line-height: 1.6;
+}
+
+h1,
+h2,
+h3,
+.serif {
+  font-family: "Playfair Display", serif;
+}
+
+/* Header / Navegação */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem 5%;
+  border-bottom: 1px solid var(--border-color);
+  background-color: var(--bg-color);
+  /* COMANDOS QUE FIXAM O MENU: */
+  position: sticky;
+  top: 0;
+  z-index: 100; /* Garante que o menu fique sempre acima dos outros elementos da página */
+}
+
+header div {
+  font-family: "Playfair Display", serif;
+  font-weight: 500;
+  letter-spacing: 3px; /* Espaçamento elegante entre as letras */
+}
+
+.insta {
+  background-color: var(--text-color);
+  color: var(--white);
+  padding: 0.75rem 1.5rem;
+  border-radius: 4px;
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: all 0.3s ease; /* Mudamos para 'all' para a transição do gradiente funcionar suavemente */
+  box-shadow: 5px 2px 5px #333333ee;
+}
+
+.insta i {
+  margin-right: 6px; /* Adiciona um pequeno espaço entre o ícone e o texto */
+  color: #b39369; /* Opcional: deixa o ícone com a cor dourada elegante da marca */
+}
+
+.insta:hover {
+  /* Aplica o gradiente oficial do Instagram e muda o fundo de cor sólida para o degradê */
+  background: linear-gradient(
+    45deg,
+    #f09433,
+    #e6683c,
+    #dc2743,
+    #cc2366,
+    #bc1888
+  );
+  color: var(--white); /* Garante que o texto continue branco e legível */
+  transform: translateY(-2px); /* Opcional: dá um leve efeito de elevação */
+}
+
+.logo {
+  font-size: 1.2rem;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.logo span {
+  display: block;
+  font-size: 0.75rem;
+  font-weight: 400;
+  letter-spacing: 4px;
+  color: var(--muted-color);
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+  gap: 2rem;
+  align-items: center;
+}
+
+nav a {
+  text-decoration: none;
+  color: var(--text-color);
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+nav a:hover {
+  color: var(--muted-color);  
+
+}
+
+.btn-primary {
+  display: inline-block;
+  background-color: var(--text-color);
+  color: var(--white);
+  padding: 0.75rem 1.5rem;
+  border-radius: 4px;
+  box-shadow: 4px 2px 2px rgba(0, 0, 0, 0.685);
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+  background-color: #25d366;
+  color: black;
+}
+
+.btn-primary i {
+  margin-left: 8px;
+}
+
+/* Hero Section */
+.hero {
+  text-align: center;
+  padding: 5rem 1rem 3rem;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.hero h1 {
+  font-size: 3.5rem;
+  font-weight: 400;
+  margin-bottom: 1.5rem;
+  line-height: 1.2;
+}
+
+.hero p {
+  font-size: 1.15rem;
+  color: var(--muted-color);
+  margin-bottom: 2rem;
+}
+
+.badge-google {
+  display: inline-block;
+  background: var(--white);
+  padding: 0.5rem 1rem;
+  border-radius: 50px;
+  font-size: 0.85rem;
+  border: 1px solid var(--border-color);
+  margin-bottom: 1rem;
+}
+
+/* Galeria / Imagem Principal Mock */
+.hero-image-container {
+width: 90%;
+max-width: 1200px;
+margin: 2rem auto 5rem;
+height: 500px;
+background: #dcd6cd 
+  url("../imagens/imagem-estrela.jpeg") 
+  center/contain repeat; /* Mudou de cover para contain */
+border-radius: 8px;
+position: relative;
+}
+
+/* Seção Cristo Redentor */
+.feature-section {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 5rem 5%;
+}
+
+.feature-content h2 {
+  font-size: 2.5rem;
+  font-weight: 400;
+  margin-bottom: 1.5rem;
+  line-height: 1.3;
+}
+
+.feature-content p {
+  color: var(--muted-color);
+  margin-bottom: 1.5rem;
+  font-size: 1rem;
+  text-align: justify;
+  text-indent: 16px;
+}
+
+.feature-image {
+  height: 450px;
+  background: url("../imagens/foto-day.png") center/cover no-repeat;
+  border-radius: 8px;
+}
+
+/* Depoimentos / O que dizem */
+.testimonials {
+  background-color: var(--white);
+  padding: 5rem 5%;
+  text-align: center;
+}
+
+.testimonials h2 {
+  font-size: 2.5rem;
+  margin-bottom: 3rem;
+  font-weight: 400;
+}
+
+.testimonial-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.testimonial-card {
+  background: var(--bg-color);
+  padding: 2.5rem;
+  border-radius: 8px;
+  border: 1px solid var(--border-color);
+}
+
+.testimonial-card p {
+  font-style: italic;
+  margin-bottom: 1.5rem;
+  color: var(--text-color);
+}
+
+.testimonial-card span {
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: var(--muted-color);
+}
+
+/* Seção/Quem é Day?*/
+
+.quem-day {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 5rem 5%;
+}
+
+.feature-day h2 {
+  font-size: 2.5rem;
+  font-weight: 400;
+  margin-bottom: 1rem;
+  line-height: 1.3;
+}
+
+.feature-day p {
+  color: var(--muted-color);
+  margin-bottom: 1rem;
+  font-size: 14px;
+  text-align: justify;
+  text-indent: 16px;
+}
+
+.day-image {
+  height: 500px;
+  background: url("../imagens/foto-day-capa.jpeg") center/cover no-repeat;
+  border-radius: 8px;
+}
+
+/*section A jornada*/
+
+#metodo-trabalho {
+  background-color: #fcf9f6; /* Tom nude/claro elegante */
+  padding: 6rem 5%;
+}
+
+#metodo-trabalho .container-jornada {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+#metodo-trabalho .subtitulo {
+  font-size: 0.85rem;
+  letter-spacing: 2px;
+  color: #888;
+  text-transform: uppercase;
+}
+
+#metodo-trabalho .container-jornada h2 {
+  font-size: 2.5rem;
+  font-weight: 400;
+  color: #333;
+  margin-bottom: 4rem;
+}
+
+/*Nossa equipe*/
+
+.nossa-equipe {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 4rem;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 5rem 5%;
+}
+
+.feature-equipe h2 {
+  font-size: 2.5rem;
+  font-weight: 400;
+  margin-bottom: 1rem;
+  line-height: 1.3;
+}
+
+.feature-equipe p {
+  color: var(--muted-color);
+  margin-bottom: 1.5rem;
+  font-size: 20px;
+  text-align: justify;
+  text-indent: 16px;
+}
+
+.equipe-imagem {
+  height: 450px;
+  background: url("../imagens/equipe-foto.png") center/contain no-repeat;
+  border-radius: 8px;
+}
+
+/* O Grid de 4 colunas */
+#metodo-trabalho .grid-etapas {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2.5rem;
+}
+
+#metodo-trabalho .etapa .numero {
+  font-size: 2rem;
+  color: #c5b4a2; /* Cor suave para os números */
+  font-weight: 300;
+  display: block;
+  margin-bottom: 1rem;
+}
+
+#metodo-trabalho .etapa h3 {
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #444;
+  margin-bottom: 1rem;
+}
+
+#metodo-trabalho .etapa p {
+  font-size: 0.95rem;
+  color: #666;
+  line-height: 1.6;
+}
+
+/* Responsividade para celulares e tablets */
+@media (max-width: 1024px) {
+  #metodo-trabalho .grid-etapas {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  #metodo-trabalho .grid-etapas {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 4rem 2rem;
+  border-top: 1px solid var(--border-color);
+  background-color: var(--bg-color);
+}
+
+footer h3 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  font-weight: 400;
+}
+
+footer p {
+  color: var(--muted-color);
+  margin-bottom: 2rem;
+}
+
+footer a {
+  padding: 5px;
+  border-radius: 10px;
+  text-decoration: none;
+  color: #6c6863;
+  transition: color 0.3s ease;
+}
+
+footer a:hover {
+  background-color: #25d366;
+  color: black;
+}
+
+.footer-info {
+  margin-top: 3rem;
+  font-size: 0.85rem;
+  color: var(--muted-color);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+/* Responsividade básica */
+@media (max-width: 768px) {
+  .feature-section {
+    grid-template-columns: 1fr;
+  }
+  .nossa-equipe {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 2rem;
+    padding: 3rem 5%;
+  }
+  .feature-equipe p {
+    font-size: 1rem;
+  }
+  .equipe-imagem {
+    height: clamp(260px, 70vw, 400px);
+  }
+  .quem-day {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  .day-image {
+    height: clamp(280px, 85vw, 500px);
+  }
+  .hero h1 {
+    font-size: 2.5rem;
+  }
+  nav ul {
+    display: none; /* Simplificado para mobile */
+  }
+}
